@@ -20,8 +20,11 @@ app.get("/", function (req, res) {
 
 
 // your first API endpoint... 
-app.get("/api/hello", function (req, res) {
-  res.json({greeting: 'hello API'});
+app.get("/api/whoami", (req, res)=>{
+    let language  = req.header('Accept-Language'); 
+    let software  = req.header('User-Agent'); 
+    let ipAddress = req.getRemoteAddress(); 
+    resp.json({ ipaddress: ipAddress, language: language, software: software})
 });
 
 
