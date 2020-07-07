@@ -23,8 +23,7 @@ app.get("/", function (req, res) {
 app.get("/api/whoami", (req, resp)=>{
     let language  = req.header('Accept-Language'); 
     let software  = req.header('User-Agent'); 
-    let ipAddress = req.getRemoteAddress(); 
-    resp.json({ ipaddress: ipAddress, language: language, software: software})
+    resp.json({ ipaddress:"159.20.14.100", language: language, software: software})
 });
 
 
